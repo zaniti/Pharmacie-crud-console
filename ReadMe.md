@@ -13,4 +13,8 @@
 
 #### 3. Type java -jar Pharmacie.jar
 
+```console
+> java -jar Pharmacie.jar
+```
+
 > For exclusive content https://www.patreon.com/zniti
