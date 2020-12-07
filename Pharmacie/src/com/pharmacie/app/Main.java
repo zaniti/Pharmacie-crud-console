@@ -17,6 +17,7 @@ public class Main {
 		while(true) {
 			Scanner reader = new Scanner(System.in);
 			Scanner reader2 = new Scanner(System.in);
+			Scanner reader3 = new Scanner(System.in);
 			System.out.print("1. Manage Clients. ");
 			System.out.print("2. Manage Medicines. ");
 			System.out.print("3. Manage Pharmacists. ");
@@ -97,7 +98,7 @@ public class Main {
 		 			  System.out.print("Enter medicine id, name, price : ");
 		 			  int id= reader.nextInt();
 		 			  String name= reader2.nextLine();
-		 			  double price= reader2.nextDouble();
+		 			  double price= reader3.nextDouble();
 		 			  Medicine newMedicine = new Medicine(id,name,price);
 		 			  medicineList.add(newMedicine);
 		 			 
@@ -120,7 +121,7 @@ public class Main {
 		 			  System.out.print("Enter new medicine id, name, price : ");
 		 			  int id= reader.nextInt();
 		 			  String name= reader2.nextLine();
-		 			  double price= reader2.nextDouble();
+		 			  double price= reader3.nextDouble();
 		 			 Medicine modification = new Medicine(id,name,price);
 		 			 medicineList.set(nbrElement-1, modification);
 		 			  for(int i=0; i < medicineList.size(); i++){
