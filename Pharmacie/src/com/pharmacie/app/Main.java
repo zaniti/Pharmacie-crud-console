@@ -36,7 +36,7 @@ public class Main {
 		 			  int itemsPurchased= 0;
 		 			  boolean isLoyal= false;
 		 			  Client newClient = new Client(id,firstName,lastName,itemsPurchased,isLoyal);
-		 			  clientList.add(newClient);
+		 			  newClient.addPerson(clientList, newClient);
 		 			 
 			    		  System.out.print("Add another client? y/n : ");
 				    	  yesno = reader.next().charAt(0);
@@ -76,13 +76,14 @@ public class Main {
 		 			  int items= clientList.get(nbrElement-1).getItemsPurchased();
 		 			  boolean loyal= clientList.get(nbrElement-1).getIsLoyal();
 		 			 Client modification = new Client(id,firstName,lastName,items,loyal);
-		 			 clientList.set(nbrElement-1, modification);
+		 			 modification.editPerson(clientList, modification, nbrElement-1);
 		 			  for(int i=0; i < clientList.size(); i++){
 			    		    System.out.println(i+1 +"-"+ clientList.get(i));
 		 			  }
 		 	  		break;
 		 	  	case 3:
 		 	  		clientList.remove(nbrElement-1);
+		 	  		deletePerson(clientList, nbrElement-1);
 		 			  for(int i=0; i < clientList.size(); i++){
 			    		    System.out.println(i+1 +"-"+ clientList.get(i));
 		 			  }
@@ -101,6 +102,7 @@ public class Main {
 		 			  double price= reader3.nextDouble();
 		 			  Medicine newMedicine = new Medicine(id,name,price);
 		 			  medicineList.add(newMedicine);
+		 			 newMedicine.addPerson(medicineList, newMedicine);
 		 			 
 			    		  System.out.print("Add another medicine? y/n : ");
 				    	  yesno = reader.next().charAt(0);
@@ -124,6 +126,7 @@ public class Main {
 		 			  double price= reader3.nextDouble();
 		 			 Medicine modification = new Medicine(id,name,price);
 		 			 medicineList.set(nbrElement-1, modification);
+		 			modification.editPerson(medicineList, modification, nbrElement-1);
 		 			  for(int i=0; i < medicineList.size(); i++){
 			    		    System.out.println(i+1 +"-"+ medicineList.get(i));
 		 			  }
@@ -148,7 +151,7 @@ public class Main {
 		 			  String lastName= reader2.nextLine();
 		 			  String salary= reader2.nextLine();
 		 			  Pharmacist newPharmacist = new Pharmacist(id,firstName,lastName,salary);
-		 			  pharmacistList.add(newPharmacist);
+		 			  addPerson(pharmacistList, newPharmacist);
 		 			 
 			    		  System.out.print("Add another pharmacist? y/n : ");
 				    	  yesno = reader.next().charAt(0);
@@ -172,7 +175,8 @@ public class Main {
 		 			  String lastName= reader2.nextLine();
 		 			  String salary= reader2.nextLine();
 		 			 Pharmacist modification = new Pharmacist(id,firstName,lastName,salary);
-		 			 pharmacistList.set(nbrElement-1, modification);
+		 			 
+		 			editPerson(pharmacistList, modification, nbrElement-1);
 		 			  for(int i=0; i < pharmacistList.size(); i++){
 			    		    System.out.println(i+1 +"-"+ pharmacistList.get(i));
 		 			  }
@@ -188,6 +192,23 @@ public class Main {
 			}
 			
 		}
+	}
+
+	
+	
+	private static void editPerson(ArrayList<Pharmacist> pharmacistList, Pharmacist modification, int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void addPerson(ArrayList<Pharmacist> pharmacistList, Pharmacist newPharmacist) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void deletePerson(ArrayList<Client> clientList, int i) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
